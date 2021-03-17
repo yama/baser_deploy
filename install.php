@@ -45,7 +45,7 @@ function postv($key, $default='') {
 
 function content()
 {
-    if (filemtime(__FILE__)+3600 < time()) {
+    if (filemtime(__FILE__)+1800 < time()) {
         return '<p>時間切れです。必要な場合は当ファイルをアップロードし直してください。</p>';
     }
     if (postv('mode') === 'dl') {
@@ -63,11 +63,11 @@ function content()
         . "<div style='padding:20px;font-size:bold;font-size:150%'>Install error, Please check permission. </div>";
     }
     return sprintf(
-        '<p>このインストーラーは%sまで有効です。</p><form method="post" action="%s" >
+        '<p>このインストーラーは30分間(%sまで)有効です。</p><form method="post" action="%s" >
     <label><input type="radio" name="mode" value="dl" checked /> ダウンロード</label><br>
     <label><input type="radio" name="mode" value="remove" /> 削除</label><br>
     <button type="submit" style="padding:20px;cursor:pointer;">実行</button></form>',
-        date('H時M分', (filemtime(__FILE__)+3600)),
+        date('H時M分', (filemtime(__FILE__)+1800)),
         basename(__FILE__)
     );
 }
