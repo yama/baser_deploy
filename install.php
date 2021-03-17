@@ -64,11 +64,13 @@ function content()
     }
     return sprintf(
         '<p>このインストーラーは30分間(%sまで)有効です。</p><form method="post" action="%s" >
-    <label><input type="radio" name="mode" value="dl" checked /> ダウンロード</label><br>
-    <label><input type="radio" name="mode" value="remove" /> 削除</label><br>
-    <button type="submit" style="padding:20px;cursor:pointer;">実行</button></form>',
-        date('H時M分', (filemtime(__FILE__)+1800)),
-        basename(__FILE__)
+    <label><input type="radio" name="mode" value="dl" checked %s /> デプロイ</label><br>
+    <label><input type="radio" name="mode" value="remove" %s /> デプロイしたファイルを全て削除</label></p>
+    <button type="submit" style="padding:10px 20px;cursor:pointer;">実行</button></form>',
+        date('H時i分', (filemtime(__FILE__)+1800)),
+        basename(__FILE__),
+        !is_dir('app') ? '' : 'disabled',
+        is_dir('app') ? '' : 'disabled'
     );
 }
 
