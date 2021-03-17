@@ -6,4 +6,4 @@ baserCMSのzipをダウンロード → 解凍 → FTPでサーバにアップ�
 
 https://onethird.net/download
 
-処理の流れは上記の「オンラインインストーラー」を参考にしました。baserCMSと同じ福岡産CMSです。
+処理の流れは上記の「オンラインインストーラー」を参考にしました。baserCMSと同じ福岡産の超軽量CMSです。
