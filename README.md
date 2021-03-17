@@ -1,5 +1,7 @@
 # baserCMSプリインストーラー
 
+![image](https://user-images.githubusercontent.com/73999/111474575-8e182a00-876f-11eb-9c6b-cf6d5f612ca1.png)
+
 baserCMSのzipをダウンロード → 解凍 → FTPでサーバにアップロード
 
 の流れに20～30分くらいかかりますが、これを使えば数秒ですませることができます。ファイル名などの値を変更すれば他のCMSでも使えると思います。
